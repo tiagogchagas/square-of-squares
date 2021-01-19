@@ -1,0 +1,19 @@
+{
+  "name": "squareofsquares",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/server.js",
+  "scripts": {
+    "start": "node ./src/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.11.12",
+    "nodemon": "^2.0.7",
+    "sucrase": "^3.17.0"
+  },
+  "devDependencies": {}
+}

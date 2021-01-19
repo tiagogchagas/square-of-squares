@@ -1,0 +1,520 @@
+{
+	"info": {
+		"_postman_id": "76f85d49-5f51-4cd5-afc5-c66dfdb751ec",
+		"name": "Square_Dev",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "LIST TERRITORIES",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/territories",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"territories"
+					]
+				},
+				"description": "Use this reques to get territorie list."
+			},
+			"response": []
+		},
+		{
+			"name": "ADD TERRITORIE",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"A\",\r\n  \"start\": { \"x\": 0, \"y\": 0 },\r\n  \"end\": { \"x\": 50, \"y\": 50 }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/territories",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"territories"
+					]
+				},
+				"description": "Use this quest to create a new territory"
+			},
+			"response": []
+		},
+		{
+			"name": "TERRITORY OVERLAY",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"A\",\r\n  \"start\": { \"x\": 0, \"y\": 0 },\r\n  \"end\": { \"x\": 50, \"y\": 50 }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/territories",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"territories"
+					]
+				},
+				"description": "Use this request to simulate a overlay situation.\r\nNOTE: JSON is same of \"ADD TERRITORIE\" to simulate specific situaion."
+			},
+			"response": []
+		},
+		{
+			"name": "TERRITORY INCOMPLETE DATA",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"start\": { \"x\": 0, \"y\": 0 },\r\n  \"end\": { \"x\": 50, \"y\": 50 }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/territories",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"territories"
+					]
+				},
+				"description": "Use this request to simulate a incomplete data situation."
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE TERRITORY",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"start\": { \"x\": 0, \"y\": 0 },\r\n  \"end\": { \"x\": 50, \"y\": 50 }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/territories/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"territories",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				},
+				"description": "Use this request to delete a territory with id parameter."
+			},
+			"response": []
+		},
+		{
+			"name": "TERRITORY BY ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"start\": { \"x\": 0, \"y\": 0 },\r\n  \"end\": { \"x\": 50, \"y\": 50 }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/territories/:id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"territories",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				},
+				"description": "Use this request to get a specific territory by id."
+			},
+			"response": []
+		},
+		{
+			"name": "TERRITORY NOT FOUND",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"start\": { \"x\": 0, \"y\": 0 },\r\n  \"end\": { \"x\": 50, \"y\": 50 }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/territories/-1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"territories",
+						"-1"
+					]
+				},
+				"description": "Use this request to simulated a situation when territory not found by this id."
+			},
+			"response": []
+		},
+		{
+			"name": "SQUARE ",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"start\": { \"x\": 0, \"y\": 0 },\r\n  \"end\": { \"x\": 50, \"y\": 50 }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/squares/:x/:y",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"squares",
+						":x",
+						":y"
+					],
+					"variable": [
+						{
+							"key": "x",
+							"value": ""
+						},
+						{
+							"key": "y",
+							"value": ""
+						}
+					]
+				},
+				"description": "Use this request to return a square on territory."
+			},
+			"response": []
+		},
+		{
+			"name": "PAINT SQUARE",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"start\": { \"x\": 0, \"y\": 0 },\r\n  \"end\": { \"x\": 50, \"y\": 50 }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/squares/:x/:y/paint",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"squares",
+						":x",
+						":y",
+						"paint"
+					],
+					"variable": [
+						{
+							"key": "x",
+							"value": ""
+						},
+						{
+							"key": "y",
+							"value": ""
+						}
+					]
+				},
+				"description": "Use this request to paint a specific square."
+			},
+			"response": []
+		},
+		{
+			"name": "PAINTED SQUARES TERRITORY",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"start\": { \"x\": 0, \"y\": 0 },\r\n  \"end\": { \"x\": 50, \"y\": 50 }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/territories/:id?withpainted=true",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"territories",
+						":id"
+					],
+					"query": [
+						{
+							"key": "withpainted",
+							"value": "true"
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				},
+				"description": "use this request to get list of painted squares on territory."
+			},
+			"response": []
+		},
+		{
+			"name": "DASHBOARD FIRST QUESTION",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"start\": { \"x\": 0, \"y\": 0 },\r\n  \"end\": { \"x\": 50, \"y\": 50 }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/dashboard/mostPaintedArea",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"dashboard",
+						"mostPaintedArea"
+					]
+				},
+				"description": "Use this request to simulated a situation when territory not found by this id."
+			},
+			"response": []
+		},
+		{
+			"name": "DASHBOARD SECOND QUESTION",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"start\": { \"x\": 0, \"y\": 0 },\r\n  \"end\": { \"x\": 50, \"y\": 50 }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/dashboard/mostProportionalPaintedArea",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"dashboard",
+						"mostProportionalPaintedArea"
+					]
+				},
+				"description": "Use this request to answer: List of territories ordered by most proportional painted area;"
+			},
+			"response": []
+		},
+		{
+			"name": "DASHBOARD THIRD QUESTION",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"start\": { \"x\": 0, \"y\": 0 },\r\n  \"end\": { \"x\": 50, \"y\": 50 }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/dashboard/lastFiveErrors",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"dashboard",
+						"lastFiveErrors"
+					]
+				},
+				"description": "Use this request to answer: List of last 5 painted squares;"
+			},
+			"response": []
+		},
+		{
+			"name": "DASHBOARD FOURTH QUESTION ",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"start\": { \"x\": 0, \"y\": 0 },\r\n  \"end\": { \"x\": 50, \"y\": 50 }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/dashboard/PaintedAreaTotalArea",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"dashboard",
+						"PaintedAreaTotalArea"
+					]
+				},
+				"description": "Use this request do answer: List of last 5 errors;"
+			},
+			"response": []
+		},
+		{
+			"name": "DASHBOARD FIFTH QUESTION",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"start\": { \"x\": 0, \"y\": 0 },\r\n  \"end\": { \"x\": 50, \"y\": 50 }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/dashboard/lastFivePainted",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"dashboard",
+						"lastFivePainted"
+					]
+				},
+				"description": "Use this request to answer: Painted area / total area (from all territories' areas);"
+			},
+			"response": []
+		}
+	]
+}

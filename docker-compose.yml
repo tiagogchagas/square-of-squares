@@ -1,0 +1,26 @@
+version: "3" ## especifica a versão do docker-compose file
+
+services: ## Define um serviço
+  app: ## nome do serviço
+    build: . ## localização do dockerfile
+    command: npm start ## comando a executar
+    ports:
+      - 80:80
+      - 443:443
+      ##- "3000:3000" ## redirecionamento de porta quando chegar alguma requisição na porta 3000 chama o container na porta 3000
+    volumes:
+      - .:/usr/app ## monitoro a pasta atual . e envio as alterações para /usr/app
+    depends_on:
+      - db
+    links:
+      - db
+
+  db:
+    image: 'mongo'
+    container_name: 'mongo-database'
+    
+    ports:
+      - '27017:27017'
+    volumes:
+      - ./data/db:/data/db
+    command: [--auth]
